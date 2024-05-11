@@ -15,7 +15,7 @@
   </dmn:inputData>
   <dmn:decision id="_59674925-5FF9-4152-A779-14E77F5D76F7" name="Tarifa de registro">
     <dmn:extensionElements/>
-    <dmn:variable id="_6DBB0037-AD64-4C48-A9CC-098F338A41FB" name="Tarifa de registro"/>
+    <dmn:variable id="_6DBB0037-AD64-4C48-A9CC-098F338A41FB" name="Tarifa de registro" typeRef="number"/>
     <dmn:informationRequirement id="_30DE1F02-65B4-489B-8CCC-7B1E6A06BA76">
       <dmn:requiredInput href="#_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92"/>
     </dmn:informationRequirement>
