@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_E90608A4-FE82-4E71-88DF-DAEBB12F6A91" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_765E62AD-8DF9-4CAB-88A9-6B136DA59C5D" name="Precio de registro perro de compania" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_E90608A4-FE82-4E71-88DF-DAEBB12F6A91">
+  <dmn:extensionElements/>
+  <dmn:inputData id="_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92" name="Perro vicioso">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5AC5E120-6434-4788-964E-4B53E6D3DAA2" name="Perro vicioso" typeRef="boolean"/>
+  </dmn:inputData>
+  <dmn:inputData id="_9DD3CB64-5395-4966-8DEC-4EE9FFA4CE31" name="Edad en meses">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5A3DB1DC-3290-48CE-A932-4046BB33CBDF" name="Edad en meses" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:inputData id="_30A04735-3232-47A8-8A67-1922DADC3966" name="Esterilizado">
+    <dmn:extensionElements/>
+    <dmn:variable id="_0FDAAC11-6928-4DE9-930D-AEC0A60234C4" name="Esterilizado" typeRef="boolean"/>
+  </dmn:inputData>
+  <dmn:decision id="_59674925-5FF9-4152-A779-14E77F5D76F7" name="Tarifa de registro">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6DBB0037-AD64-4C48-A9CC-098F338A41FB" name="Tarifa de registro"/>
+    <dmn:informationRequirement id="_30DE1F02-65B4-489B-8CCC-7B1E6A06BA76">
+      <dmn:requiredInput href="#_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_10F2C78E-9513-47EE-AD89-9DBF6A3A0F5A">
+      <dmn:requiredInput href="#_9DD3CB64-5395-4966-8DEC-4EE9FFA4CE31"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_1C1BE245-FDEA-4846-8371-368DB52EF817">
+      <dmn:requiredInput href="#_30A04735-3232-47A8-8A67-1922DADC3966"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_E5EDB1C6-5A5F-46A2-B732-D90823C8CD7D" hitPolicy="COLLECT" aggregation="SUM" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_A6427C60-2E61-403B-B964-8A18607978C8">
+        <dmn:inputExpression id="_8F3348CB-9979-4989-A88E-B551B0A3E1CE" typeRef="number">
+          <dmn:text>Edad en meses</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_CE2BEA7B-8D0A-4146-91A6-A764CDC1E4C6">
+        <dmn:inputExpression id="_3C301BC2-8576-4468-AED3-DCA36C7C5A24" typeRef="boolean">
+          <dmn:text>Esterilizado</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_F9FD6069-9DDF-4BFC-99A9-0753662015C9">
+        <dmn:inputExpression id="_5AD912D3-0E7B-491F-8191-76FD107EE02D" typeRef="boolean">
+          <dmn:text>Perro vicioso</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_ADC057B8-9D9F-4316-8D12-D0735A665BA5"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_72AAA0A8-6F34-453E-90C0-9D83660B3883">
+        <dmn:inputEntry id="_576EDD42-F4DC-4963-BD67-B9D0F7B64D9B">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AC2A4242-6ACC-4B42-BF48-2D8E1DEE2575">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_F0931802-6AD0-4405-9AEA-2EB8727B24DE">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D108DB7F-CFB0-412A-BF8C-04F7C943DCA5">
+          <dmn:text>100</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_6CCB471A-7BE1-4342-AE93-BB0F35568E7D">
+        <dmn:inputEntry id="_28BB3AD4-5C36-43D6-A6DE-95771570FB78">
+          <dmn:text>&gt;= 6</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_0836C233-5228-4AFD-A960-F728FE791FF5">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EE205810-DE7A-45A5-A22D-0AE4A9C60BBD">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_3B3974DC-1428-4863-9FD8-5DBFAC5E7B1A">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_ADC6EC47-78BE-4589-9D1A-D8ACD8563DB5">
+        <dmn:inputEntry id="_9BC989F8-57A6-41CC-88AB-1C3B4B5E6E37">
+          <dmn:text>&gt;= 6</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9B0F95FE-E959-4002-8E10-7BACCB38428E">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_C66A2629-A923-44E5-A832-99F38396BE87">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_ED6231CF-DD34-4B77-A5D2-36B6AA52AFBD">
+          <dmn:text>40</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E843F6F7-C130-49D5-A6B6-F98F52636DB2">
+        <dmn:inputEntry id="_944B1102-25FF-4C6B-BA0F-D3D50DCE5CF9">
+          <dmn:text>&lt; 6</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_568DB0F3-466A-414C-8F29-F88A63E8DFC5">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AF8BAACE-4F8C-42C9-A797-CC7D0EF9B959">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A268747E-70A1-4AAC-84E5-E00048B797B9">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_D620C7A5-837A-4190-AF65-C9FEF958BCE2" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_E5EDB1C6-5A5F-46A2-B732-D90823C8CD7D">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92" dmnElementRef="_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="242" y="378" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_9DD3CB64-5395-4966-8DEC-4EE9FFA4CE31" dmnElementRef="_9DD3CB64-5395-4966-8DEC-4EE9FFA4CE31" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="396" y="378" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_30A04735-3232-47A8-8A67-1922DADC3966" dmnElementRef="_30A04735-3232-47A8-8A67-1922DADC3966" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="561" y="378" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_59674925-5FF9-4152-A779-14E77F5D76F7" dmnElementRef="_59674925-5FF9-4152-A779-14E77F5D76F7" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="399" y="224" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_30DE1F02-65B4-489B-8CCC-7B1E6A06BA76" dmnElementRef="_30DE1F02-65B4-489B-8CCC-7B1E6A06BA76">
+        <di:waypoint x="292" y="403"/>
+        <di:waypoint x="399" y="249"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_10F2C78E-9513-47EE-AD89-9DBF6A3A0F5A" dmnElementRef="_10F2C78E-9513-47EE-AD89-9DBF6A3A0F5A">
+        <di:waypoint x="446" y="403"/>
+        <di:waypoint x="449" y="274"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_1C1BE245-FDEA-4846-8371-368DB52EF817" dmnElementRef="_1C1BE245-FDEA-4846-8371-368DB52EF817">
+        <di:waypoint x="611" y="403"/>
+        <di:waypoint x="499" y="249"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
