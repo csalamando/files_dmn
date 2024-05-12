@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_E90608A4-FE82-4E71-88DF-DAEBB12F6A91" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_765E62AD-8DF9-4CAB-88A9-6B136DA59C5D" name="Precio de registro perro de compania" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_E90608A4-FE82-4E71-88DF-DAEBB12F6A91">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_D21BD674-A284-4FB0-B8F5-6FCBA10BD967" name="Insertar un nombre" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
   <dmn:inputData id="_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92" name="Perro vicioso">
     <dmn:extensionElements/>
     <dmn:variable id="_5AC5E120-6434-4788-964E-4B53E6D3DAA2" name="Perro vicioso" typeRef="boolean"/>
