@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_E90608A4-FE82-4E71-88DF-DAEBB12F6A91" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_765E62AD-8DF9-4CAB-88A9-6B136DA59C5D" name="Precio de registro perro de compania" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_E90608A4-FE82-4E71-88DF-DAEBB12F6A91">
   <dmn:extensionElements/>
-  <dmn:itemDefinition id="_D21BD674-A284-4FB0-B8F5-6FCBA10BD967" name="Insertar un nombre" isCollection="false">
-    <dmn:typeRef>Any</dmn:typeRef>
+  <dmn:itemDefinition id="_D21BD674-A284-4FB0-B8F5-6FCBA10BD967" name="Edad" isCollection="false">
+    <dmn:typeRef>number</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_4D58B843-CCC3-430E-A74E-BF5AAEDEBD59">
+      <dmn:text>&gt;= 1</dmn:text>
+    </dmn:allowedValues>
   </dmn:itemDefinition>
   <dmn:inputData id="_7EA3C90B-4CC0-4F8C-A892-40DF2C27AE92" name="Perro vicioso">
     <dmn:extensionElements/>
@@ -10,7 +13,7 @@
   </dmn:inputData>
   <dmn:inputData id="_9DD3CB64-5395-4966-8DEC-4EE9FFA4CE31" name="Edad en meses">
     <dmn:extensionElements/>
-    <dmn:variable id="_5A3DB1DC-3290-48CE-A932-4046BB33CBDF" name="Edad en meses" typeRef="number"/>
+    <dmn:variable id="_5A3DB1DC-3290-48CE-A932-4046BB33CBDF" name="Edad en meses" typeRef="Edad"/>
   </dmn:inputData>
   <dmn:inputData id="_30A04735-3232-47A8-8A67-1922DADC3966" name="Esterilizado">
     <dmn:extensionElements/>
